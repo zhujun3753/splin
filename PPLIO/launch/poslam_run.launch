@@ -1,10 +1,7 @@
 <launch>
     <!-- Subscribed topics -->
     <!-- <rosparam command="load" file="$(find splin)/config/newer_college.yaml" /> -->
-    <!-- <rosparam command="load" file="$(find splin)/config/newer_college_plane_plot.yaml" /> -->
-    <!-- <rosparam command="load" file="$(find splin)/config/livox.yaml" /> -->
     <!-- <rosparam command="load" file="$(find splin)/config/hilti.yaml" /> -->
-    <!-- <rosparam command="load" file="$(find splin)/config/hilti_plane_plot.yaml" /> -->
     <rosparam command="load" file="$(find splin)/config/ouster64_mulran.yaml" />
     <!-- <rosparam command="load" file="$(find splin)/config/velodyne32_nclt.yaml" /> -->
 
