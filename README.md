@@ -40,7 +40,6 @@ ppsam_no_f  :  4.7264428700106444
 </div>
 
 ## 4. Acknowledgments
-
 Thanks to Zou, Zuhao, et al. for open-sourcing their excellent work [LTAOM](https://github.com/hku-mars/LTAOM/tree/main).
 
 ## License
