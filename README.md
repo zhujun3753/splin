@@ -9,10 +9,12 @@
 
 ## 2. We will release the complete code upon acceptance of the paper.
 
-## 3. Test results
+## 3. Evaluation
+Run:
 ```shell
 python eval_rmse.py  
 ```
+Expected output:
 ```c
 data_dir:  eval_data/MulRan/DCC01
 ['poses_fast_lio_sc.txt', 'poses_gt.txt', 'poses_lio_sam_sc.txt', 'poses_ltaom.txt', 'poses_pplio.txt', 'poses_pplio_sc.txt', 'poses_ppsam.txt', 'poses_ppsam_isdor.txt', 'poses_ppsam_no_f.txt']
