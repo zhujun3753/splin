@@ -40,7 +40,7 @@ ppsam_no_f  :  4.7264428700106444
 </div>
 
 ## 4. Acknowledgments
-Thanks to Zou, Zuhao, et al. for open-sourcing their excellent work [LTAOM](https://github.com/hku-mars/LTAOM/tree/main).
+Thanks to Fu Zhang, et al. for open-sourcing their excellent work [LTAOM](https://github.com/hku-mars/LTAOM/tree/main) and [R3LIVE](https://github.com/hku-mars/r3live).
 
 ## License
 The source code is released under [GPLv2](http://www.gnu.org/licenses/) license.
