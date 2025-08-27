@@ -1,0 +1,39 @@
+<launch>
+    <!-- Subscribed topics -->
+    <!-- <rosparam command="load" file="$(find splin)/config/newer_college.yaml" /> -->
+    <!-- <rosparam command="load" file="$(find splin)/config/newer_college_plane_plot.yaml" /> -->
+    <!-- <rosparam command="load" file="$(find splin)/config/livox.yaml" /> -->
+    <!-- <rosparam command="load" file="$(find splin)/config/hilti.yaml" /> -->
+    <!-- <rosparam command="load" file="$(find splin)/config/hilti_plane_plot.yaml" /> -->
+    <rosparam command="load" file="$(find splin)/config/ouster64_mulran.yaml" />
+    <!-- <rosparam command="load" file="$(find splin)/config/velodyne32_nclt.yaml" /> -->
+
+    <node pkg="splin" type="poslam_LiDAR_front_end" name="poslam_LiDAR_front_end"  output="screen" required="true"/>
+
+    <param name="SaveDir" type="string" value="/media/zhujun/0DFD06D20DFD06D2/ws_PPSLAM/src/SPLIN/output/tmp"/>
+    <!-- <rosparam command="load" file="$(find loop_opti)/launch/loopopt_config_mulran.yaml" /> -->
+
+    <node pkg="splin" type="poslam_mapping" name="poslam_mapping" output="screen" required="true"/>
+    <group if="0">
+        <node pkg="splin" type="poslam_mapping" name="poslam_mapping" output="screen" launch-prefix="gdb  -ex run --args" />
+    </group>
+    <group if="0">
+        <node pkg="splin" type="poslam_mapping" name="poslam_mapping" output="screen" launch-prefix="valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=/tmp/valgrind_my_node.log"  
+        />
+    </group>
+    <group if="0">
+        <node pkg="splin" type="poslam_mapping" name="poslam_mapping" output="screen" launch-prefix="valgrind --tool=massif --heap=yes --massif-out-file=/tmp/massif_my_node.out --log-file=/tmp/valgrind_my_node.log --time-unit=ms --detailed-freq=10 --max-snapshots=200"    
+        />
+    </group>
+    
+    <!-- massif-visualizer /tmp/massif_my_node.out -->
+
+    <node pkg="loop_opti" type="loop_detection_node" name="loop_detection_node" output="screen" required="true"/>
+    <!-- <node pkg="loop_opti" type="loop_detection_node" name="loop_detection_node" output="screen" required="true" launch-prefix="gdb  -ex run -,-args"/> -->
+    <!-- <node pkg="loop_opti" type="test_node" name="test_node" output="screen" required="true" /> -->
+
+    <arg name="rviz" default="0" />
+    <group if="$(arg rviz)">
+        <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find splin)/config/rviz/simple_rviz_config.rviz" />
+    </group>
+</launch>

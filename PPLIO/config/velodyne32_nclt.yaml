@@ -1,0 +1,56 @@
+lidar_topic: /points_raw
+IMU_topic: /imu_raw
+Lidar_front_end:
+   lidar_type: 2   # 1 enum LID_TYPE{MID=0,HORIZON=1,VELO16=2,OUST64=3,QT64=4};
+   point_skip: 1
+   blind: 4  #* exp16_attic_to_upper_gallery_2 exp18_corridor_lower_gallery_2 需要设置为1.0，不然人身上的点太多
+
+poslam_lio:
+   cov_acc: 0.1
+   cov_gyr: 0.1
+   cov_bias_acc: 0.0001
+   cov_bias_gyro: 0.0001
+   dense_map_enable: true # false  true
+   num_match_pts: 4 # kd树搜索的点数量
+   max_iteration: 4 # Maximum times of LIO esikf.  增大好像没什么用
+   tree_ds_size: 0.05 #* 搜索树下采样 0.05
+   voxel_downsample_size_surf: 0.5 #* 点云下采样
+   lidar_cov_p: 1.02  # 0.025
+   lidar_to_imu_R:
+      [ 1, 0, 0,
+         0, 1, 0,
+         0, 0, 1]
+   lidar_to_imu_t: [ 0, 0, 0.28]
+   lio_pts_num: 1600.0 # 前端下采样之后的点数量（暂时不用）
+   use_backend: true # false  true
+   plane_merge_angle: 8 # 小平面融合的最大角度
+   # plane_merge_angle: 3 # 小平面融合的最大角度
+   plane_merge_dist: 0.015 # 小平面合并的最大距离(中心点到平面)
+   max_eigen_dist_th: 0.05 # 构成平面最大特征值的最小值 
+   max_merge_plane_n: 16 # 每个融合平面的最大小平面数量 (为16还可以)
+   min_plane_pts_n: 15 # 每个网格拟合平面的最小点数量 (默认50) 15
+   pi_split_n: 45 # 180度划分的份数
+   P_r_value: 1.0 #* 回环帧位姿误差信息矩阵的值
+   error_scale: 0.01 #* 回环优化中点面约束和平面约束的权重比值
+   use_pl_lio: true # false  true 是否使用平面前端
+   use_non_plane_pt: true # false  true 是否在平面前端中使用非平面点
+   large_scale_env: true
+   process_debug: false # false  true 输出代码运行位置
+   rematch_less: false
+   decouple_front: true # 解耦前后端，前端的运行不受后端的影响，也就是回环检测之后不更新前端的搜索树和位姿
+   use_voxel_filter: true
+   use_isdor: false
+   # sparse_scan: true # 针对较为稀疏的扫描线，对于“地面”之上的窄网格，如果其中点数量超过一定值，就可以视为，likely_dyn
+
+loop_detection:
+   vs_for_ovlap: 0.5 # 构建一个目标子图点云所在位置的 0.5m*0.5m 空的网格,用于回环子图的重叠率计算
+   proj_dis_min: 0 # 投影平面立柱的高度最小值
+   summary_min_thre: 10 # 关键点处存在点的分段的数量至少为8
+   descriptor_near_num: 15 # 搜索每个特征点周围的20个点建立三角形
+   descriptor_min_len: 1 # 边长范围
+   descriptor_max_len: 30 # 边长范围
+   skip_near_num: 25 #* 匹配的时候不考虑最近的50个子图
+   normal_threshold: 0.2 # 法线差异小于0.1
+   associate_consecutive_frame: false # 是否在因子图中建立相邻子图的顶点关联,对于nclt数据集好像没有必要
+   use_key_frame_planes: true # 是否在后端使用平面
+   overlap_score_thr: 0.1 # check LC cloud pair overlap ratio  0.5 回环子图点云网格重合比例小于 50% 则视为回环失败

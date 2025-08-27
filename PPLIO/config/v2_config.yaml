@@ -1,0 +1,31 @@
+LiDAR_pointcloud_topic: /laser_cloud_flat
+IMU_topic: /livox/imu
+Lidar_front_end:
+   lidar_type: 4   # 1 for Livox-avia, 3 for Ouster-OS1-64, 4 for QT64, 5 for QT64 and livox
+   N_SCANS: 6
+   using_raw_point: 1
+   point_step: 1
+   blind: 1.5
+
+poslam_lio:
+   num_match_pts: 5 # kd树搜索的点数量
+   max_iteration: 10           # Maximum times of LIO esikf.
+   lidar_time_delay: 0        # The time-offset between LiDAR and IMU, provided by user. 
+   filter_size_map: 0.30 #* kd树下采样
+   voxel_downsample_size_surf: 0.1 #* 点云下采样
+   #* 自采集数据集外参
+   lidar_to_imu_R:
+      [0.00208257, -0.021197, 0.99977,
+      -0.999995, 0.00353009, 0.00215706,
+      -0.00357195, -0.99977, -0.0211871 ]
+   # lidar_to_imu_t: [0.104347, -0.146143, -0.0335309]
+   lidar_to_imu_t: [0.145997, -0.122883, -0.0619309]
+   #* newer_college
+   # lidar_to_imu_R:
+   #    [1, 0, 0,
+   #    0, 1, 0,
+   #    0, 0, 1 ]
+   # # lidar_to_imu_t: [0.104347, -0.146143, -0.0335309]
+   # lidar_to_imu_t: [-0.014, 0.012, 0.015]
+   lio_pts_num: 800.0 # 前端下采样之后的点数量（暂时不用）
+   use_backend: true # false  true
