@@ -38,3 +38,10 @@ ppsam_no_f  :  4.7264428700106444
 <div align="center">
 <img src="eval_data/pictures/Figure_2.png" width = 98% />
 </div>
+
+## 4. Acknowledgments
+
+Thanks to Zou, Zuhao, et al. for open-sourcing their excellent work [LTAOM](https://github.com/hku-mars/LTAOM/tree/main).
+
+## License
+The source code is released under [GPLv2](http://www.gnu.org/licenses/) license.
