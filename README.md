@@ -33,6 +33,9 @@ ppsam_isdor :  4.6470100403271415
 ppsam_no_f  :  4.7264428700106444
 ```
 <div align="center">
+<img src="eval_data/pictures/screenshot0.png" width = 45% />
+</div>
+<div align="center">
 <img src="eval_data/pictures/Figure_1.png" width = 98% />
 </div>
 <div align="center">
