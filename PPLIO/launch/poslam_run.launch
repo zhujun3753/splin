@@ -11,7 +11,6 @@
     <node pkg="splin" type="poslam_LiDAR_front_end" name="poslam_LiDAR_front_end"  output="screen" required="true"/>
 
     <param name="SaveDir" type="string" value="/media/zhujun/0DFD06D20DFD06D2/ws_PPSLAM/src/SPLIN/output/tmp"/>
-    <!-- <rosparam command="load" file="$(find loop_opti)/launch/loopopt_config_mulran.yaml" /> -->
 
     <node pkg="splin" type="poslam_mapping" name="poslam_mapping" output="screen" required="true"/>
     <group if="0">
