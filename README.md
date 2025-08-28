@@ -32,14 +32,23 @@ SPLIN       :  4.768434514692518
 <img src="eval_data/pictures/screenshot0.png" width = 45% />
 </div> -->
 <div align="center">
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">ATE, RMSE, and runtime comparison on the MulRan dataset (DCC01 sequence). </div>
 <img src="eval_data/pictures/fig_ape_traj3d_bar_noGT.png" width = 98% />
+
 </div>
+
+
+
 <div align="center">
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Mapping result of SPLIN on the NCLT dataset (2012-01-15 sequence).</div>
 <img src="eval_data/pictures/nclt_4.png" width = 98% />
 </div>
-<!-- <div align="center">
-<img src="eval_data/pictures/Figure_2.png" width = 98% />
-</div> -->
 
 ## 4. Acknowledgments
 Thanks to Fu Zhang, et al. for open-sourcing their excellent work [LTAOM](https://github.com/hku-mars/LTAOM/tree/main) and [R3LIVE](https://github.com/hku-mars/r3live).
