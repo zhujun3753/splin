@@ -158,7 +158,7 @@ for i in range(len(poses_list)):
                 time_start = poses_list[i][0,0]
             if time_end > poses_list[i][-1,0]:
                 time_end = poses_list[i][-1,0]
-print("time_len: ", time_len)
+# print("time_len: ", time_len)
 pose_files_t_cut = []
 for i in range(len(poses_list)):
     if i is not ref_data_id:

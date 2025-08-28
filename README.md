@@ -18,7 +18,6 @@ Expected output:
 ```c
 data_dir:  eval_data/MulRan/DCC01
 ['poses_gt.txt', 'poses_fast_lio_sc.txt', 'poses_lio_sam_sc.txt', 'poses_ltaom.txt', 'poses_splin.txt']
-time_len:  [540.5850977897644, 546.1032583713531, 545.9923703670502, 531.5999147891998, 531.9999170303345]
 rmses:  [0.0, 7.580212, 8.615076, 5.344614, 4.768432]
 alg_names:  ['fast_lio_sc', 'lio_sam_sc', 'ltaom', 'splin']
 excu_time:  [25.542918725171543, 117.86952996389891, 13.969675573208159, 29.773599097146985]

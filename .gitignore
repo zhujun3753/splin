@@ -5,5 +5,5 @@ PPLIO/src/loam
 # PPLIO/src/tools
 plot_time.py
 eval_data/NCLT
-/.gitignore
+.gitignore
 tmp.txt
