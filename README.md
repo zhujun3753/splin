@@ -17,20 +17,16 @@ python eval_rmse.py
 Expected output:
 ```c
 data_dir:  eval_data/MulRan/DCC01
-['poses_fast_lio_sc.txt', 'poses_gt.txt', 'poses_lio_sam_sc.txt', 'poses_ltaom.txt', 'poses_pplio.txt', 'poses_pplio_sc.txt', 'poses_splin.txt', 'poses_splin_isdor.txt', 'poses_splin_no_f.txt']
-time_len:  [546.1032583713531, 540.5850977897644, 545.9923703670502, 531.5999147891998, 553.6950016021729, 547.0950453281403, 531.9999170303345, 531.9999170303345, 531.9999170303345]
-rmses:  [7.580212, 0.0, 8.615076, 5.344614, 18.378185, 5.996756, 4.768432, 4.647011, 4.72644]
-alg_names:  ['fast_lio_sc', 'lio_sam_sc', 'ltaom', 'pplio', 'pplio_sc', 'splin', 'splin_isdor', 'splin_no_f']
-excu_time:  [25.542918725171543, 117.86952996389891, 13.969675573208159, 37.19252968580715, 36.549721903214156, 29.773599097146985, 34.22086161068978, 15.801903268327917]
-fast_lio_sc :  7.580212541411045
-gt          :  4.610385564963174e-10
-lio_sam_sc  :  8.615076866506188
-ltaom       :  5.344615362293383
-pplio       :  18.417946893761584
-pplio_sc    :  5.996755741603469
-splin       :  4.768434514692518
-splin_isdor :  4.6470100403271415
-splin_no_f  :  4.7264428700106444
+['poses_gt.txt', 'poses_fast_lio_sc.txt', 'poses_lio_sam_sc.txt', 'poses_ltaom.txt', 'poses_splin.txt']
+time_len:  [540.5850977897644, 546.1032583713531, 545.9923703670502, 531.5999147891998, 531.9999170303345]
+rmses:  [0.0, 7.580212, 8.615076, 5.344614, 4.768432]
+alg_names:  ['fast_lio_sc', 'lio_sam_sc', 'ltaom', 'splin']
+excu_time:  [25.542918725171543, 117.86952996389891, 13.969675573208159, 29.773599097146985]
+GT          :  4.610385564963174e-10
+FAST-LIO-SC :  7.580212541411045
+LIO-SAM-SC  :  8.615076866506188
+LTA-OM      :  5.344615362293383
+SPLIN       :  4.768434514692518
 ```
 <div align="center">
 <img src="eval_data/pictures/screenshot0.png" width = 45% />

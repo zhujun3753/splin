@@ -205,6 +205,10 @@ for i in range(len(src_files)):
         poses_align[i] = [rotation_matrix, translation_array, rmse]
         rmses[i] = rmse
     pass
+print("rmses: ", rmses)
+print("alg_names: ", alg_names)
+print("excu_time: ", [v[:,1].mean()*1000 for v in excu_times])
+if not show_plot : exit()
 excu_times_ext = []
 for i in range(len(data_names)):
     find_alg = False
@@ -221,10 +225,6 @@ for i in range(len(alg_names)):
     if 'ltaom' in alg_names[i]: alg_names[i] = 'LTA-OM'
     if 'splin' in alg_names[i]: alg_names[i] = 'SPLIN'
     if 'gt' in alg_names[i]: alg_names[i] = 'GT'
-print("rmses: ", rmses)
-print("alg_names: ", alg_names)
-print("excu_time: ", [v[:,1].mean()*1000 for v in excu_times])
-if not show_plot : exit()
 start_t = ref_poses[0,0]
 cur_t_xyz_rpy = []
 similar_trans=[]
