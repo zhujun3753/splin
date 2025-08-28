@@ -28,15 +28,15 @@ LIO-SAM-SC  :  8.615076866506188
 LTA-OM      :  5.344615362293383
 SPLIN       :  4.768434514692518
 ```
-<div align="center">
+<!-- <div align="center">
 <img src="eval_data/pictures/screenshot0.png" width = 45% />
-</div>
+</div> -->
 <div align="center">
 <img src="eval_data/pictures/fig_ape_traj3d_bar_noGT.png" width = 98% />
 </div>
-<!-- <div align="center">
-<img src="eval_data/pictures/Figure_1.png" width = 98% />
-</div> -->
+<div align="center">
+<img src="eval_data/pictures/nclt_4.png" width = 98% />
+</div>
 <!-- <div align="center">
 <img src="eval_data/pictures/Figure_2.png" width = 98% />
 </div> -->
