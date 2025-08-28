@@ -54,11 +54,7 @@ int main(int argc, char **argv)
     //     thread_backend= std::thread(&SPLIN::data_association_thread, fast_lio_instance.get());
     // }
     if(fast_lio_instance->use_pl_lio)
-        // fast_lio_instance->service_LIO_update_plane2();
         fast_lio_instance->service_LIO_update_plane();
-    else
-        fast_lio_instance->service_LIO_update();
-    // 等待子线程结束（如果service_LIO_update_plane返回的话）
     // std::cout<<"getchar to end"<<std::endl;
     // getchar();
     // if(fast_lio_instance->use_backend && thread_backend.joinable())

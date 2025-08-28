@@ -36,11 +36,14 @@ splin_no_f  :  4.7264428700106444
 <img src="eval_data/pictures/screenshot0.png" width = 45% />
 </div>
 <div align="center">
+<img src="eval_data/pictures/fig_ape_traj3d_bar_noGT.png" width = 98% />
+</div>
+<!-- <div align="center">
 <img src="eval_data/pictures/Figure_1.png" width = 98% />
-</div>
-<div align="center">
+</div> -->
+<!-- <div align="center">
 <img src="eval_data/pictures/Figure_2.png" width = 98% />
-</div>
+</div> -->
 
 ## 4. Acknowledgments
 Thanks to Fu Zhang, et al. for open-sourcing their excellent work [LTAOM](https://github.com/hku-mars/LTAOM/tree/main) and [R3LIVE](https://github.com/hku-mars/r3live).

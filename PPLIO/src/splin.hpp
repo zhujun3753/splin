@@ -318,7 +318,6 @@ public:
     bool sync_packages(MeasureGroup &meas);
     void feat_points_cbk(const sensor_msgs::PointCloud2::ConstPtr &msg_in);
     bool get_pointcloud_data_from_ros_message(sensor_msgs::PointCloud2::ConstPtr & msg, pcl::PointCloud<pcl::PointXYZINormal> & pcl_pc);
-    int service_LIO_update();
     int service_LIO_update_plane();
     void set_initial_state_cov( StatesGroup &state );
     void data_association_thread();
