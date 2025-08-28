@@ -296,22 +296,23 @@ for i in range(len(data_names)): print(data_names[i].ljust(max_str_len, ' '),': 
 ylabel_names = ['x(m)','y(m)','z(m)','ape(m)']
 # ---------- Trajectory plot (3D or 2D) ----------
 if not show2d:
-    # fig_traj = plt.figure(figsize=(7.5, 5.8))
-    # ax1 = fig_traj.add_subplot(111, projection='3d')
-    # for j in range(len(cur_t_xyz_rpy)):
-    #     data = cur_t_xyz_rpy[j]
-    #     label = alg_names[j] if j < len(alg_names) else data_names[j]
-    #     ax1.plot(data[:,1], data[:,2], data[:,3], label=label)
-    # ax1.view_init(elev=20, azim=-60)
-    # ax1.set_zlim(10, 30)
-    # ax1.set_xlabel("x (m)")
-    # ax1.set_ylabel("y (m)")
-    # ax1.set_zlabel("z (m)")
+    fig_traj = plt.figure(figsize=(8.5, 5.8))
+    ax1 = fig_traj.add_subplot(111, projection='3d')
+    for j in range(len(cur_t_xyz_rpy)):
+        data = cur_t_xyz_rpy[j]
+        label = alg_names[j] if j < len(alg_names) else data_names[j]
+        ax1.plot(data[:,1], data[:,2], data[:,3], label=label)
+    ax1.view_init(elev=40, azim=-50)
+    ax1.set_zlim(10, 30)
+    ax1.set_xlabel("x (m)", labelpad=12) # 使用 labelpad 增加与轴的距离
+    ax1.set_ylabel("y (m)", labelpad=12)
+    ax1.set_zlabel("z (m)", labelpad=12)
     # ax1.set_title("Trajectories")
-    # ax1.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0), borderaxespad=0.)
-    # fig_traj.tight_layout()
-    # fig_traj.savefig("fig_traj3d.pdf", bbox_inches="tight")
-    # fig_traj.savefig("fig_traj3d.png", bbox_inches="tight")
+    ax1.legend(loc="upper left", bbox_to_anchor=(0.85, 0.95), borderaxespad=0.)
+    # ax1.legend(loc="upper right")
+    fig_traj.tight_layout()
+    fig_traj.savefig("fig_traj3d.pdf", bbox_inches="tight")
+    fig_traj.savefig("fig_traj3d.png", bbox_inches="tight")
     pass
 else:
     fig_traj2d, ax = plt.subplots(figsize=(7.2, 5.4))
