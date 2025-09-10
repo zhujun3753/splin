@@ -223,7 +223,7 @@ for i in range(len(alg_names)):
     if 'fast_lio_sc' in alg_names[i]: alg_names[i] = 'FAST-LIO-SC'
     if 'lio_sam_sc' in alg_names[i]: alg_names[i] = 'LIO-SAM-SC'
     if 'ltaom' in alg_names[i]: alg_names[i] = 'LTA-OM'
-    if 'splin' in alg_names[i]: alg_names[i] = 'SPLIN(ours)'
+    if 'splin' in alg_names[i]: alg_names[i] = 'SPLIN(Ours)'
     if 'gt' in alg_names[i]: alg_names[i] = 'GT'
 start_t = ref_poses[0,0]
 cur_t_xyz_rpy = []
@@ -303,7 +303,7 @@ if not show2d:
         label = alg_names[j] if j < len(alg_names) else data_names[j]
         # ax1.plot(data[:,1], data[:,2], data[:,3], label=label)
         if label == "GT":  # Ground Truth 线加粗
-            ax1.plot(data[:,1], data[:,2], data[:,3], label=label, linewidth=3.0)  # 可以手动指定颜色
+            ax1.plot(data[:,1], data[:,2], data[:,3], label=label, linewidth=4.0)  # 可以手动指定颜色
         else:
             ax1.plot(data[:,1], data[:,2], data[:,3], label=label, linewidth=1.5)
     ax1.view_init(elev=40, azim=-50)
